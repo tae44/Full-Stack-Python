@@ -9,6 +9,7 @@ def a():
         node.text = str(new_year)
         node.set('name', 'jeff')
         del node.attrib['name']
+    tree.write('new.xml', encoding='utf-8')
 
 def b():
     for country in root.findall('country'):
@@ -21,5 +22,6 @@ def c():
         print(country)
 
 if __name__ == '__main__':
-    c()
-    tree.write('first.xml')
+    for node in root.iter('year'):
+        print(node.tag, node.text)
+
