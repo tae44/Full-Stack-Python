@@ -1,0 +1,6 @@
+2017-05-09 21:27:07 PM - root - DEBUG - p_logging: debug
+2017-05-09 21:27:07 PM - root - INFO - p_logging: info
+2017-05-09 21:27:07 PM - root - WARNING - p_logging: warning
+2017-05-09 21:27:07 PM - root - ERROR - p_logging: error
+2017-05-09 21:27:07 PM - root - CRITICAL - p_logging: critical
+2017-05-09 21:27:07 PM - root - DEBUG - p_logging: 10
