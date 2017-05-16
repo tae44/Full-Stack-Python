@@ -18,13 +18,13 @@ class Foo:
         print('__call__')
 
     def __getitem__(self, item):
-        print(item)
+        print(item, type(item), '__getitem__')
 
     def __setitem__(self, key, value):
-        print(key, value)
+        print(key, value, '__setitem__')
 
     def __delitem__(self, key):
-        print(key)
+        print(key, '__delitem__')
 
     def __iter__(self):
         yield 1
@@ -52,6 +52,10 @@ obj.age = 18
 obj['k1']
 obj['k1'] = 'v1'
 del obj['k1']
+
+obj[1:2]
+obj[1:2] = [3]
+del obj[1:2]
 
 r1 = hasattr(Foo, 'name')
 r2 = hasattr(Foo, 'f')
