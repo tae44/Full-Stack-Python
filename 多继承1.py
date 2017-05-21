@@ -9,7 +9,7 @@ e -> c -> a -> d -> b -> s
 
 class s:
     def f(self):
-        print('s')
+        print('inputs')
 
 class a(s):
     def f(self):
