@@ -2,7 +2,7 @@ import logging
 
 def a():
     logging.basicConfig(filename='log.log',
-                        format='%(asctime)inputs - %(name)inputs - %(levelname)inputs - %(module)inputs: %(message)inputs',
+                        format='%(asctime)s - %(name)s - %(levelname)s - %(module)s: %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S %p',
                         level=10)
 
@@ -16,7 +16,7 @@ def a():
 
 def b():
     file1_1 = logging.FileHandler('l1_1.log', 'a', encoding='utf-8')
-    fmt = logging.Formatter(fmt="%(asctime)inputs - %(name)inputs - %(levelname)inputs -%(module)inputs:  %(message)inputs")
+    fmt = logging.Formatter(fmt="%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s")
     file1_1.setFormatter(fmt)
 
     file1_2 = logging.FileHandler('l1_2.log', 'a', encoding='utf-8')
