@@ -1,6 +1,8 @@
 import socket
 import user
 import os
+import sys
+import time
 
 
 # 先注册或者登录
@@ -41,6 +43,11 @@ else:
         f = open(inp, 'rb')
         for line in f:
             cli.sendall(line)
+            percent = str(cli.recv(1024), encoding='utf-8')
+            sys.stdout.write('\r')
+            sys.stdout.write('{} %'.format(percent))
+            sys.stdout.flush()
+            time.sleep(0.2)
     else:
         print('文件不存在!')
         cli.close()

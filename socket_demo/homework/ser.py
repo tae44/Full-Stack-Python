@@ -41,6 +41,8 @@ class MyServer(socketserver.BaseRequestHandler):
                 data = conn.recv(1024)
                 f.write(data)
                 has_recv += len(data)
+                percent = has_recv / total_size * 100  # 传输文件的百分比
+                conn.sendall(bytes(str(percent), encoding='utf-8'))
 
 
 if __name__ == '__main__':
