@@ -11,7 +11,7 @@ for i in range(10):
     t = threading.Thread(target=do, args=(event_obj,))
     t.start()
 
-event_obj.clear()
+# event_obj.clear()
 
 inp = input('input: ')
 if inp == 'true':
