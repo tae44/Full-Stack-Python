@@ -14,5 +14,5 @@ for i in range(10):
 # event_obj.clear()
 
 inp = input('input: ')
-if inp == 'true':
+if inp == 'go':
     event_obj.set()
