@@ -11,6 +11,19 @@ import time
 #         p.start()
 #         # p.join()
 
+# 进程之间不共享数据
+
+li = []
+
+def foo(i):
+    li.append(i)
+    print('say hi', li)
+
+if __name__ == '__main__':
+    for i in range(10):
+        p = Process(target=foo, args=(i,))
+        p.start()
+
 # 在使用并发设计的时候最好尽可能的避免共享数据，尤其是在使用多进程的时候。如果你真有需要共享数据，multiprocessing提供了两种方式。
 
 # Shared memory
@@ -31,20 +44,20 @@ import time
 #     print(arr[:])
 
 # Server process
-def f(d, l):
-    d[1] = '1'
-    d['2'] = 2
-    d[0.25] = None
-    l.reverse()
-
-if __name__ == '__main__':
-    with Manager() as manager:
-        d = manager.dict()
-        l = manager.list(range(10))
-
-        p = Process(target=f, args=(d, l))
-        p.start()
-        p.join()
-
-        print(d)
-        print(l)
+# def f(d, l):
+#     d[1] = '1'
+#     d['2'] = 2
+#     d[0.25] = None
+#     l.reverse()
+#
+# if __name__ == '__main__':
+#     with Manager() as manager:
+#         d = manager.dict()
+#         l = manager.list(range(10))
+#
+#         p = Process(target=f, args=(d, l))
+#         p.start()
+#         p.join()
+#
+#         print(d)
+#         print(l)
