@@ -13,16 +13,16 @@ import time
 
 # 进程之间不共享数据
 
-li = []
-
-def foo(i):
-    li.append(i)
-    print('say hi', li)
-
-if __name__ == '__main__':
-    for i in range(10):
-        p = Process(target=foo, args=(i,))
-        p.start()
+# li = []
+#
+# def foo(i):
+#     li.append(i)
+#     print('say hi', li)
+#
+# if __name__ == '__main__':
+#     for i in range(10):
+#         p = Process(target=foo, args=(i,))
+#         p.start()
 
 # 在使用并发设计的时候最好尽可能的避免共享数据，尤其是在使用多进程的时候。如果你真有需要共享数据，multiprocessing提供了两种方式。
 
@@ -61,3 +61,18 @@ if __name__ == '__main__':
 #
 #         print(d)
 #         print(l)
+
+def f(i, dic):
+    dic[i] = 100 + i
+    print(len(dic))
+
+if __name__ == '__main__':
+    m = Manager()
+    dic = m.dict()
+    # dic = {}
+
+    for i in range(10):
+        p = Process(target=f, args=(i, dic))
+        p.start()
+        # p.join()
+        time.sleep(1)
