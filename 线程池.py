@@ -42,8 +42,8 @@ class ThreadPool:
         self.max_num = max_num
         self.cancel = False
         self.terminal = False
-        self.generate_list = []
-        self.free_list = []
+        self.generate_list = [] # 真实创建的线程的列表
+        self.free_list = [] # 空闲线程的列表
 
     def run(self, func, args, callback=None):
         """
