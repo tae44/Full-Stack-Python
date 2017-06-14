@@ -1,0 +1,35 @@
+[ss]{
+    color: red;
+    font-size: 30px;
+}
+/*p[ss]{*/
+    /*color: red;*/
+    /*font-size: 30px;*/
+/*}*/
+[ss="1"]{
+    color: yellow;
+    font-size: 40px;
+}
+[ab~="y"]{  /*属性有多值需要用~=*/
+    color: blueviolet;
+}
+[ac|="this"]{  /*比对属性值 - 前的字符串*/
+    color: yellow;
+}
+[ad^="this"]{  /*比对属性值开头的字符串*/
+    background-color: crimson;
+}
+[ae$="is"]{  /*比对属性值结尾的字符串*/
+    background-color: yellow;
+}
+[af*="h"]{  /*比对属性值任意字符串*/
+    background-color: darkgreen;
+}
+p:before{
+    content: "开始: ";
+    color: red;
+}
+p:after{
+    content: " 结束";
+    color: blue;
+}

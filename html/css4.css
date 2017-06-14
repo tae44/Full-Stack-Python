@@ -1,0 +1,25 @@
+p{
+    /*color: #ff0;*/
+    color: rgba(255,0,0,1.0);
+}
+/*body{*/
+    /*width: 800px;*/
+    /*height: 800px;*/
+    /*background-image: url("886.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+/*}*/
+#back{
+    height: 400px;
+    /*background-image: url("886.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+    background: red url("886.png") no-repeat center;
+}
+#con{
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 100px;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+}

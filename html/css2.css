@@ -24,3 +24,6 @@ div.cc{
 .r1>p{  /*子代选择器*/
     font-size: 20px;
 }
+.r2+p{  /*兄弟选择器*/
+    color: red;
+}
