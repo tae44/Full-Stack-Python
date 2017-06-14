@@ -1,0 +1,26 @@
+*{
+    background-color: aquamarine;
+}
+p,a{
+
+}
+#pp{
+    color: red;
+    font-size: 30px;
+}
+.cc{
+    font-size: 50px;
+}
+.dd{
+    font-size: 40px; /*最后一个生效*/
+    color: yellow;
+}
+div.cc{
+    color: darkgreen;
+}
+.r1 p{  /*后代选择器*/
+    color: blueviolet;
+}
+.r1>p{  /*子代选择器*/
+    font-size: 20px;
+}
