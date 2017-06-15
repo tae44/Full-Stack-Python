@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .ele{
+            border: solid 2px transparent;
+            background-color: gainsboro;
+        }
+        .ele:hover{
+            border: solid 2px red;
+        }
+        .ele:hover .ele-item{  /*悬浮之后子div样式的改变*/
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ele">
+        <div>123</div>
+        <div class="ele-item">456</div>
+    </div>
+
+</body>
+</html>

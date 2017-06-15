@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .touch{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;      /*超出的部分隐藏*/
+            position: relative;
+        }
+        .touch:hover .content{
+            visibility: visible;
+        }
+        .touch .content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: 0.5;         /*透明度*/
+            text-align: center;
+            visibility: hidden;   /*不可见*/
+        }
+        .content .f{
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="touch">
+        <div><img src="886.png"></div>
+        <div class="content">
+            <div class="f">ASDF</div>
+            <div class="f">1111</div>
+        </div>
+    </div>
+
+</body>
+</html>
