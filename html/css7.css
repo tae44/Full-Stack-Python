@@ -3,11 +3,11 @@
     height:100px;
     background-color: aqua;
     /*position: static;    默认值*/
-    /*position: fixed;     固定值*/
+    position: fixed;     /*固定值*/
     /*position: relative;  根据之前自己位置的相对移动*/
-    position: absolute;
-    left: 650px;
-    top: 200px;
+    /*position: absolute;*/
+    right: 10px;
+    bottom: 20px;
 }
 .d2{
     width: 400px;
