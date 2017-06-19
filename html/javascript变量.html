@@ -1,0 +1,35 @@
+<!--http://www.cnblogs.com/wupeiqi/articles/5602773.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+//        name = "Jason";      // 全局变量
+//        function f1() {
+//            var name = 123; // var表示此变量为局部变量
+//        }
+//        f1();
+//        alert(name);
+
+        num1 = 123;             // 直接创建原始值
+        num2 = new Number(123); // 根据Number类创建对象
+        num3 = "a123"
+
+        console.log(isNaN(num2))
+        console.log(isNaN(num3))
+
+        x = parseInt(num3)
+        console.log(isNaN(x))
+
+//        isFinite() flase -> 无穷 true -> 有限数
+
+//        typeof x
+    </script>
+
+</body>
+</html>
