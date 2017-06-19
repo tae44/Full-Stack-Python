@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .left{
+            float: left;
+        }
+        .wrap{
+            height: 22px;
+            width: 150px;
+            border: 1px solid #ddd;
+        }
+        .wrap .minus{
+            height: 22px;
+            width: 22px;
+            line-height: 22px;
+            text-align: center;
+            cursor: pointer;   /*小手的标志*/
+        }
+        .wrap .plus{
+            height: 22px;
+            width: 22px;
+            line-height: 22px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wrap .count input{
+            border: 0;
+            padding: 0;
+            width: 104px;
+            height: 22px;
+            text-align: center;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="minus left" onclick="Minus()">-</div>
+        <div class="count left">
+            <input id="count" type="text" value="1">
+        </div>
+        <div class="plus left" onclick="Plus()">+</div>
+    </div>
+
+    <script type="text/javascript">
+        function Plus() {
+            var old_str = document.getElementById("count").value
+            var old_int = parseInt(old_str)
+            var new_int = old_int + 1
+            document.getElementById("count").value = new_int
+        }
+        function Minus() {
+            var old_str = document.getElementById("count").value
+            var old_int = parseInt(old_str)
+            var new_int = old_int - 1
+            document.getElementById("count").value = new_int
+        }
+    </script>
+
+</body>
+</html>
