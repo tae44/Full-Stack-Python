@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #hh{
+            background-color: red;
+            color: white;
+            font-size: 54px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hh">欢迎领导莅临指导</div>
+
+    <script>
+        function f() {
+            var d1 = document.getElementById("hh");
+            var d1_text = d1.innerText;
+            // 获取字串符第一个字符
+            var first_char = d1_text[0];
+            // 获取剩下的字符串
+            var sub_char = d1_text.slice(1, d1_text.length);
+            // 将第一个字符放置到最后的位置
+            var new_str = sub_char + first_char
+            // 重新赋值
+            d1.innerText = new_str
+        }
+        // 每多少时间执行一次函数
+        setInterval(f, 500);
+
+    </script>
+
+</body>
+</html>
