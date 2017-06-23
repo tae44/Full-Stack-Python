@@ -1,0 +1,42 @@
+<!--http://www.cnblogs.com/wupeiqi/articles/5643298.html-->
+<!--http://www.shouce.ren/api/javascript/l_Math.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="c1">asdf</div>
+    <div class="c1" id="i1">
+        <div name="n1">l1</div>
+        <div name="n1">123</div>
+        <a>11111</a>
+    </div>
+    <script>
+//        document.getElementById("i1");
+//        document.getElementsByName("n1");
+//        document.getElementsByClassName("c1");
+//        document.getElementsByTagName("a");
+        var i1 = document.getElementById("i1");
+        var p1_text = i1.parentNode;  // 含文本
+        var p1 = i1.parentElement;    // 不含文本
+
+        var eles_node = p1_text.childNodes;      // 含文本所有标签
+        for (var i = 0; i < eles_node.length; i++) {
+            var current_node = eles_node[i];
+            if (current_node.nodeType == 1) {
+                console.log(eles_node[i]);
+            }
+        }
+
+        var eles = p1.children;   // 不含文本所有标签
+        for (var i = 0; i < eles.length; i++) {
+            console.log(eles[i])
+        }
+    </script>
+
+</body>
+</html>
