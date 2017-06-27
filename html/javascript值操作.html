@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <a href="www.baidu.com">百度<span>666</span></a>
+    <input id="txt" type="text">
+    <select id="sel">
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+    </select>
+
+    <script>
+        var obj = document.getElementsByTagName("a")[0];
+//        alert(obj.innerText);
+//        alert(obj.innerHTML);
+//        obj.className
+//        obj.classList
+//        obj.classList.add("xxx")
+//        obj.classList.remove("xxx")
+        var x = document.getElementById("txt").value;
+        alert(x);
+        var y = document.getElementById("sel").value;
+        alert(y);
+    </script>
+
+</body>
+</html>
