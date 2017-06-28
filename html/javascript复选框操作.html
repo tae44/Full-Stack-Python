@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--<div id="i1">-->
+        <!--<ul>-->
+            <!--<li><input type="checkbox" value="1">足球</li>-->
+            <!--<li><input type="checkbox" value="2">篮球</li>-->
+            <!--<li><input type="checkbox" value="3">棒球</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<div id="i2">-->
+        <!--<ul>-->
+            <!--<li><input type="checkbox" value="12">足球</li>-->
+            <!--<li><input type="checkbox" value="22">篮球</li>-->
+            <!--<li><input type="checkbox" value="32">棒球</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <!--<script>-->
+        <!--i1 = document.getElementById("i1");-->
+        <!--checks = i1.getElementsByTagName("input");-->
+        <!--checks[0].checked = true;-->
+        <!--checks[2].checked = true;-->
+    <!--</script>-->
+
+    <div>
+        <input type="button" value="全选" onclick="CheckAll()">
+        <input type="button" value="取消" onclick="CencelAll()">
+        <input type="button" value="反选" onclick="ReverseAll()">
+    </div>
+    <table>
+        <thead>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>年龄</th>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td><input class="c1" type="checkbox"></td>
+                <td>alex</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td><input class="c1" type="checkbox"></td>
+                <td>Jason</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td><input class="c1" type="checkbox"></td>
+                <td>Jane</td>
+                <td>17</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function CheckAll() {
+            var tb = document.getElementById("tb");
+            var checks = tb.getElementsByClassName("c1");
+            for (var i = 0; i < checks.length; i++) {
+                var current_check = checks[i];
+                current_check.checked = true;
+            }
+        }
+        function CencelAll() {
+            var tb = document.getElementById("tb");
+            var checks = tb.getElementsByClassName("c1");
+            for (var i = 0; i < checks.length; i++) {
+                var current_check = checks[i];
+                current_check.checked = false;
+            }
+        }
+        function ReverseAll() {
+            var tb = document.getElementById("tb");
+            var checks = tb.getElementsByClassName("c1");
+            for (var i = 0; i < checks.length; i++) {
+                var current_check = checks[i];
+                current_check.checked = !current_check.checked;
+            }
+        }
+    </script>
+
+</body>
+</html>
