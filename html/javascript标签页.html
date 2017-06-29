@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css8.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+    <div style="width: 400px;margin: 0 auto">
+        <div class="tab-menu">
+            <div class="title clearfix">
+                <ul>
+                    <li target="h1" class="active" onclick="Show(this)">价格趋势</li>
+                    <li target="h2" onclick="Show(this)">市场分布</li>
+                    <li target="h3" onclick="Show(this)">其他</li>
+                </ul>
+            </div>
+            <div id="content" class="content">
+                <div con="h1">content1</div>
+                <div con="h2" class="hide">content2</div>
+                <div con="h3" class="hide">content3</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Show(arg) {
+            var target = arg.getAttribute("target"); // 获取target属性
+            arg.className = "active"; // 点中的标签变为活动的
+            var brothers = arg.parentElement.children;
+            for (var i = 0; i < brothers.length; i++) {
+                if (arg != brothers[i]) {
+                    brothers[i].removeAttribute("class"); // 变为非活动的
+                }
+            }
+            var contents = document.getElementById("content").children;
+            for (var j = 0; j < contents.length; j++) {
+                var current_content = contents[j];
+                var con = current_content.getAttribute("con");
+                if (con == target) {
+                    current_content.classList.remove("hide");
+                } else {
+                    current_content.className = "hide";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

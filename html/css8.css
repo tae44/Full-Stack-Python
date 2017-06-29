@@ -1,0 +1,33 @@
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    float: left;
+    background-color: darkgoldenrod;
+    color: white;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
+.clearfix:after{
+    display: block;
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.tab-menu .title{
+    background-color: #dddddd;
+}
+.tab-menu .title .active{
+    background-color: white;
+    color: black;
+}
+.tab-menu .content{
+    border: 1px solid #dddddd;
+    min-height: 150px;
+}
