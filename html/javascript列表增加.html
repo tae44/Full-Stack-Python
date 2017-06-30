@@ -1,0 +1,46 @@
+<!--http://www.cnblogs.com/wupeiqi/articles/5602773.html-->
+<!--http://www.shouce.ren/api/javascript/l_Math.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div>
+        <input type="text">
+        <input type="button" value="增加" onclick="Add(this)">
+    </div>
+    <div>
+        <ul id="comment">
+            <li>Jason</li>
+            <li>Jane</li>
+        </ul>
+    </div>
+
+    <script>
+        function Add(arg) {
+            var val = arg.previousElementSibling.value;
+            arg.previousElementSibling.value = "";
+            var commentList = document.getElementById("comment");
+            // var str = "<li>" + val + "</li>";
+            // beforeEnd    内部最后
+            // beforeBegin  外部上边
+            // afterBegin   内部上边
+            // afterEnd     外部最后
+            // commentList.insertAdjacentHTML("beforeEnd", str);
+
+            var tag = document.createElement("li");
+            tag.innerText = val;
+            var temp = document.createElement("a");
+            temp.innerText = "百度";
+            temp.href = "https://www.baidu.com";
+            tag.appendChild(temp);
+            commentList.appendChild(tag);
+        }
+    </script>
+
+</body>
+</html>

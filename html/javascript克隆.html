@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h2 id="h2">
+        333
+        <span>123</span>
+        <a>123</a>
+    </h2>
+    <div id="dd">
+        <div class="item">1</div>
+        <div class="item">2</div>
+    </div>
+
+    <script>
+        var h = document.getElementById("h2");
+        var c = document.getElementById("dd");
+        var newH = h.cloneNode(true); // 不加true不复制内部内容
+        c.appendChild(newH);
+    </script>
+
+</body>
+</html>
