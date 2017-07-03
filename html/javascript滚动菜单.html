@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #dddddd;
+        }
+        .pg-header{
+            background-color: black;
+            color: white;
+            height: 48px;
+        }
+        .pg-body .menu{
+            position: absolute;
+            left: 200px;
+            width: 180px;
+            background-color: white;
+            float: left;
+        }
+        .pg-body .menu .active{
+            background-color: green;
+            color: white;
+        }
+        .pg-body .fixed{
+            position: fixed;
+            top: 5px;
+        }
+        .pg-body .content{
+            position: absolute;
+            left: 385px;
+            right: 200px;
+            background-color: white;
+            float: left;
+        }
+        .pg-body .content .item{
+            height: 900px;
+        }
+    </style>
+</head>
+<body onscroll="S()">
+
+    <div class="pg-header"></div>
+    <div class="pg-body">
+        <div id="menu" class="menu">
+            <ul>
+                <li>第一章</li>
+                <li>第二章</li>
+                <li>第三章</li>
+            </ul>
+        </div>
+        <div id="content" class="content">
+            <div class="item">床前明月光</div>
+            <div class="item">疑是地上霜</div>
+            <div class="item">我叫郭德纲</div>
+        </div>
+    </div>
+
+    <script>
+        function S() {
+            var heigh = document.body.scrollTop;
+            var menu = document.getElementById("menu");
+            if (heigh > 48) {
+                menu.classList.add("fixed");
+            } else {
+                menu.classList.remove("fixed");
+            }
+            var items = document.getElementById("content").children;
+            for (var i = 0; i < items.length; i++) {
+                var currentItem = items[i];
+                var currentItemBodyTop = currentItem.offsetTop + currentItem.offsetParent.offsetTop;
+                var currentItemWindowTop = currentItemBodyTop - heigh;
+                var currentHeight = currentItem.offsetHeight;
+                var bottomHeight = currentItemBodyTop + currentHeight;
+                if (currentItemWindowTop < 0 && heigh < currentHeight) {
+                    var ziJi = menu.getElementsByTagName("li")[i];
+                    ziJi.className = "active";
+                    var lis = menu.getElementsByTagName("li");
+                    for (var j = 0; j < lis.length; j++) {
+                        if (ziJi != lis[j]) {
+                            lis[j].classList.remove("active");
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
