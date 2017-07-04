@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="dd">
+        <input type="button" value="点我1">
+        <input type="button" value="点我2">
+        <input type="button" value="点我3">
+    </div>
+
+    <script>
+        var dds = document.getElementById("dd").children;
+        for (var i = 0; i < dds.length; i++) {
+            var current_input = dds[i];
+            current_input.onclick = function() { alert(i); }
+        }
+
+//        function f() {
+//            for (i = 0; i < 3; i++) {
+//                setInterval(function() {
+//                    console.log(i);
+//                }, 1000);
+//            }
+//        }
+//        f(); // 当调用的时候i已经等于3了
+    </script>
+
+</body>
+</html>
