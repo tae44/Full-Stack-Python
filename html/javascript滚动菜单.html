@@ -74,7 +74,7 @@
                 var currentItemWindowTop = currentItemBodyTop - heigh;
                 var currentHeight = currentItem.offsetHeight;
                 var bottomHeight = currentItemBodyTop + currentHeight;
-                if (currentItemWindowTop < 0 && heigh < currentHeight) {
+                if (currentItemWindowTop < 0 && heigh < bottomHeight) {
                     var ziJi = menu.getElementsByTagName("li")[i];
                     ziJi.className = "active";
                     var lis = menu.getElementsByTagName("li");

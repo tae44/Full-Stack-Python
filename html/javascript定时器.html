@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form id="form" action="https://www.sogou.com/web?" method="get">
+        <input name="query" type="text">
+        <input type="button" onclick="Submit()" value="提交">
+    </form>
+
+    <input type="button" value="提交" onclick="Firm()">
+    <input type="button" value="定时" onclick="Interval()">
+    <input type="button" value="停止定时" onclick="StopInterval()">
+
+    <div>
+        <input type="button" value="删除" onclick="Delete()">
+        <input type="button" value="保留状态" onclick="UnDelete()">
+        <div id="status"></div>
+    </div>
+
+    <script>
+        function Submit() {
+            document.getElementById("form").submit();
+        }
+        function Firm() {
+            var r = confirm("傻狗");
+            console.log(r);
+        }
+        function f() {
+            console.log("123");
+        }
+        function Interval() {
+//            setInterval(console.log("1"), 1000);
+//            setInterval(f, 1000);
+            s = setInterval(function() {
+                console.log("444");
+            }, 1000);
+        }
+        function StopInterval() {
+            clearInterval(s);
+        }
+        function Delete() {
+            document.getElementById("status").innerText = "已删除";
+            t = setTimeout(ClearStatus, 2000);
+        }
+        function ClearStatus() {
+            document.getElementById("status").innerText = "";
+        }
+        function UnDelete() {
+            clearTimeout(t);
+        }
+    </script>
+
+</body>
+</html>
