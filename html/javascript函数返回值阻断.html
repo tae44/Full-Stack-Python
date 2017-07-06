@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="javascript复选框操作.html">
+        <div id="form">
+            <input type="text">
+        </div>
+        <input type="submit" value="提交" onclick="return SubmitForm()"> <!--先执行自定义操作 后执行默认操作-->
+    </form>
+
+    <script>
+        function SubmitForm() {
+            var input = document.getElementById("form").getElementsByTagName("input");
+            for (var i = 0; i < input.length; i++) {
+                var currentInput = input[i];
+                var val = currentInput.value;
+                if (!val.trim()) { // 如果内容为空
+                    alert('请输入内容');
+                    return false; // 返回false后续操作就被阻断了
+                }
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>
