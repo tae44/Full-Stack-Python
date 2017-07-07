@@ -14,7 +14,7 @@ p{
     /*background-image: url("886.png");*/
     /*background-repeat: no-repeat;*/
     /*background-position: center center;*/
-    background: red url("886.png") no-repeat center;
+    background: red url("../886.png") no-repeat center;
 }
 #con{
     background-color: aquamarine;

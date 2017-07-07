@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <input name="apple" />
+    <input name="flower" checked="checked" />
+
+    <script>
+        $("input:not(:checked)").css("color", "red");
+    </script>
+
+</body>
+</html>
