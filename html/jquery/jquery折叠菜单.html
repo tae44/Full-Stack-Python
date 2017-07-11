@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        .menu{
+            width: 200px;
+            height: 500px;
+            background-color: aqua;
+            border: 1px solid;
+        }
+        .menu .title{
+            background-color: red;
+            cursor: pointer;
+        }
+        .menu .context{
+            background-color: white;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <div class="menu">
+        <div class="item">
+            <div class="title" onclick="Show(this)">菜单一</div>
+            <div class="context hide">
+                <ul>
+                    <li>内容1</li>
+                    <li>内容1</li>
+                    <li>内容1</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="Show(this)">菜单二</div>
+            <div class="context hide">
+                <ul>
+                    <li>内容2</li>
+                    <li>内容2</li>
+                    <li>内容2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="Show(this)">菜单三</div>
+            <div class="context hide">
+                <ul>
+                    <li>内容3</li>
+                    <li>内容3</li>
+                    <li>内容3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Show(arg) {
+            $(arg).next().removeClass("hide");
+            $(arg).parent().siblings().children(".context").addClass("hide");
+        }
+    </script>
+
+</body>
+</html>
