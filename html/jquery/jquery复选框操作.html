@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <div>
+        <input type="button" value="全选" onclick="CheckAll()">
+        <input type="button" value="取消" onclick="CencelAll()">
+        <input type="button" value="反选" onclick="ReverseAll()">
+    </div>
+    <table>
+        <thead>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>年龄</th>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td><input class="c1" type="checkbox"></td>
+                <td>alex</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td><input class="c1" type="checkbox"></td>
+                <td>Jason</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td><input class="c1" type="checkbox"></td>
+                <td>Jane</td>
+                <td>17</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function CheckAll() {
+            $("#tb :checkbox").prop("checked", true);
+        }
+        function CencelAll() {
+            $("#tb :checkbox").prop("checked", false);
+        }
+        function ReverseAll() {
+            $("#tb :checkbox").each(
+                function () {
+                    var r = $(this).prop("checked");
+                    $(this).prop("checked", !r);
+                }
+            )
+        }
+    </script>
+
+</body>
+</html>

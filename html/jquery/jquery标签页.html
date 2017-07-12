@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/css8.css" type="text/css" rel="stylesheet">
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <div style="width: 400px;margin: 0 auto">
+        <div class="tab-menu">
+            <div class="title clearfix">
+                <ul>
+                    <li target="h1" class="active" onclick="Show(this)">价格趋势</li>
+                    <li target="h2" onclick="Show(this)">市场分布</li>
+                    <li target="h3" onclick="Show(this)">其他</li>
+                </ul>
+            </div>
+            <div class="content">
+                <div id="h1">content1</div>
+                <div id="h2" class="hide">content2</div>
+                <div id="h3" class="hide">content3</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Show(arg) {
+            $(arg).addClass("active").siblings().removeClass("active");
+            var index = $(arg).attr("target");
+            $("#" + index).removeClass("hide").siblings().addClass("hide");
+        }
+    </script>
+
+</body>
+</html>

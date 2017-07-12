@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        .goTop{
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 40px;
+            height: 40px;
+            background-color: cadetblue;
+            color: white;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="height: 2000px">
+        <h1>ASDF</h1>
+    </div>
+    <div id="dd" class="goTop hide">
+        <a href="javascript:void(0)" onclick="GoTop()">返回顶部</a>
+    </div>
+
+    <script>
+        $(window).scroll (
+            function () {
+                if ($(window).scrollTop() > 50) {
+                    $("#dd").removeClass("hide");
+                } else {
+                    $("#dd").addClass("hide");
+                }
+            }
+        );
+        function GoTop() {
+            $(window).scrollTop(0);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        body{
+            margin: 0;
+            background-color: #dddddd;
+        }
+        .pg-header{
+            background-color: black;
+            color: white;
+            height: 48px;
+        }
+        .pg-body .menu{
+            position: absolute;
+            left: 200px;
+            width: 180px;
+            background-color: white;
+            float: left;
+        }
+        .pg-body .menu .active{
+            background-color: green;
+            color: white;
+        }
+        .pg-body .fixed{
+            position: fixed;
+            top: 5px;
+        }
+        .pg-body .content{
+            position: absolute;
+            left: 385px;
+            right: 200px;
+            background-color: white;
+            float: left;
+        }
+        .pg-body .content .item{
+            height: 900px;
+        }
+        .pg-body .content .sp {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pg-header"></div>
+    <div class="pg-body">
+        <div id="menu" class="menu">
+            <ul>
+                <li zz="z1">第一章</li>
+                <li zz="z2">第二章</li>
+                <li zz="z3">第三章</li>
+            </ul>
+        </div>
+        <div id="content" class="content">
+            <div class="item" z="z1">床前明月光</div>
+            <div class="item" z="z2">疑是地上霜</div>
+            <div class="item sp" z="z3">我叫郭德纲</div>
+        </div>
+    </div>
+
+    <script>
+        $(window).scroll(
+            function () {
+                var h = $(window).scrollTop(); // 距离窗口顶部的高度
+                if (h > 48) {
+                    $("#menu").addClass("fixed");
+                } else {
+                    $("#menu").removeClass("fixed");
+                }
+
+                if ($(document).height() == $(window).height() + h) { // 文档高度 == 窗口高度 + 滑动高度 拉倒底,最后一个激活
+                    $("#menu ul").children(":last").addClass("active").siblings().removeClass("active");
+                    return;
+                }
+
+                $("#content").children().each(
+                    function () {
+                        var offset = $(this).offset().top;
+                        var total = $(this).height() + offset; // 总高度 == 文档高度 + 距离文档顶部高度
+                        if (h > offset && h < total) {
+                            var index = $(this).attr("z");
+                            var newIndex = "[zz=" + index + "]";
+                            $(newIndex).addClass("active").siblings().removeClass("active");
+                        }
+                    }
+                );
+            }
+        );
+    </script>
+
+</body>
+</html>
