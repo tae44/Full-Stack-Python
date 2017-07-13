@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <div>
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+            <li>444</li>
+            <li>555</li>
+        </ul>
+    </div>
+    <button>增加</button>
+
+    <script>
+        $(function () {
+//            这种方式后加的标签没有点击效果
+//            $("li").click(function () {
+//                alert("hello world");
+//            });
+
+            $("ul").delegate("li", "click", function () {
+                alert("hello world");
+            });
+
+            $("button").click(function () {
+                $("ul").append("<li>555</li>");
+            });
+        });
+    </script>
+
+</body>
+</html>

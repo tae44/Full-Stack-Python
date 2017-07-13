@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <button id="add">增加</button>
+    <div class="dd">
+        <input type="text" style="width: 100px">
+        <input type="text" style="width: 300px">
+        <input class="del" type="button" value="删除">
+    </div>
+
+    <script>
+        $(function () { // 所有都放到function中
+            $("#add").click(function () {
+                $(".dd").clone(true).insertAfter(this).siblings().removeClass("dd"); // 如果不删除dd,会翻倍增加
+            });
+
+            $(".del").click(function () {
+                $(this).siblings().remove();
+                $(this).remove();
+            });
+        })
+    </script>
+
+</body>
+</html>

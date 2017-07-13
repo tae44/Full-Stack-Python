@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <script>
+        // each内部return跟外层函数无关
+        function f1() {
+            var li = [11, 22, 33];
+            $.each(li, function (k, v) {
+               console.log(k, v);
+               if (k == 1) {
+                   return false; // 需要退出each循环可使回调函数返回false，其它返回值将被忽略
+               };
+            });
+            console.log("end");
+        }
+        f1();
+    </script>
+
+</body>
+</html>
