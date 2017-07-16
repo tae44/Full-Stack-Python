@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <div class="dd">11111</div>
+    <div class="dd">22222</div>
+
+    <script>
+        jQuery.fn.extend({
+           s1: function () {
+               // this 表示方法前面的选择器
+               var val = this.text();
+               val = val + "SB";
+               return val;
+           }
+        });
+        jQuery.extend({
+           s2: function (arg) {
+               var val = $(arg).text();
+               return val + "OK";
+           }
+        });
+        var ret1 = $(".dd").s1();
+        var ret2 = $.s2(".dd");
+        console.log(ret1);
+        console.log(ret2);
+    </script>
+
+</body>
+</html>
