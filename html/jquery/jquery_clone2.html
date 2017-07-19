@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <div class="outer">
+        <div class="section">
+            <div class="icons" style="display: inline-block">
+                <a onclick="Add(this)"><button>+</button></a>
+            </div>
+            <div class="inputs" style="display: inline-block">
+                <input type="checkbox">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Add(arg) {
+            var item = $(arg).parent().parent().clone();
+            $(".outer").append(item);
+            item.find("a").children().text("-");
+            item.find("a").attr("onclick", "remo(this)");
+        }
+        function remo(arg) {
+            $(arg).parent().parent().remove();
+        }
+    </script>
+
+</body>
+</html>
