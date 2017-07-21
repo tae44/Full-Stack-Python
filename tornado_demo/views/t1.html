@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ static_url('t1.css') }}">
+</head>
+<body>
+
+    <h1>提交内容:</h1>
+    <form method="post" action="/index">
+        <input type="text" name="xxx">
+        <input type="submit" value="提交">
+    </form>
+    <h1>展示内容:</h1>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% end %}
+    </ul>
+
+</body>
+</html>
