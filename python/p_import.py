@@ -7,7 +7,7 @@ def a():
     print(ret)
 
 def b():
-    import p_json
+    from python import p_json
 
     url = input('请输入url: ')
     inp = url.split('/')[-1]
