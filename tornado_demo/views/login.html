@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div>
+        <form method="post" action="/login">
+            <input type="text" name="username">
+            <input type="password" name="pwd">
+            <input type="checkbox" name="auto" value="1">7天免登录
+            <input type="submit" value="登录">
+            <span style="color: red">{{ status_text }}</span>
+        </form>
+    </div>
+
+</body>
+</html>
