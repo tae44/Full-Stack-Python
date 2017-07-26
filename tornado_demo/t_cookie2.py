@@ -1,19 +1,21 @@
 import tornado.ioloop
 import tornado.web
-from tornado_demo.controllers import t1_home
 
+class IndexHandler(tornado.web.RequestHandler):
+    def get(self):
+        print(self.cookies)
+        self.set_cookie('k1', '88')
+        print(self.get_cookie('k1'))
+        self.render('t_cookie2.html')
 
 settings = {
     'template_path': 'views',
     'static_path': 'statics'
 }
 
-
-# 路由映射
 application = tornado.web.Application([
-    (r"/index", t1_home.MainHandler),
+    (r"/index", IndexHandler),
 ], **settings)
-
 
 if __name__ == "__main__":
     application.listen(8888)
