@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../statics/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <input type="button" onclick="JqSendRequest()" value='Ajax请求'>
+
+    <script>
+        function JqSendRequest(){
+            $.ajax({
+                url: '/ajax',
+                type: 'POST',
+                data: {'k1': 'v1'},
+                dataType: 'text',
+                success: function(data, statusText, xmlHttpRequest){
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
