@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../statics/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <input type="file" id="img">
+    <input type="button" onclick="UploadFile()" value="上传">
+    <script>
+        function UploadFile() {
+            var fileObj = $("#img")[0].files[0];
+            var form = new FormData();
+            form.append('fafafa', fileObj);
+            $.ajax({
+                type: 'POST',
+                url: '/jq',
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function (arg) {
+                    console.log(arg);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

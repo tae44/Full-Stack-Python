@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input type="file" id="img">
+    <input type="button" onclick="UploadFile()" value="上传">
+    <script>
+        function UploadFile() {
+            // 获取文件对象
+            var fileObj = document.getElementById('img').files[0];
+            // 创建Form对象
+            var form = new FormData();
+            form.append('fafafa', fileObj);
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', '/xhr', true);
+            xhr.send(form)
+        }
+    </script>
+
+</body>
+</html>

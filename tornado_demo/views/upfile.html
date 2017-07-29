@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>
+        {% for item in img_list %}
+            <li><img style="height: 50px;width: 50px" src="../statics/img/{{ item }}"></li>
+        {% end %}
+    </ul>
+
+    <form action="/index" method="post" enctype="multipart/form-data">
+        <input type="text" name="user">
+        <h3>爱好</h3>
+        <input name="favor" type="checkbox" value="1">篮球
+        <input name="favor" type="checkbox" value="2">足球
+        <input name="favor" type="checkbox" value="3">台球
+        <input type="file" name="fafafa">
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+</html>

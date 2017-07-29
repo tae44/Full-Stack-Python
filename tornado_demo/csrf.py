@@ -11,7 +11,7 @@ class CsrfHandler(tornado.web.RequestHandler):
 settings = {
     'template_path': 'views',
     'static_path': 'statics',
-    # 'static_url_prefix': '/sss/',
+    'static_url_prefix': '/statics/',
     'xsrf_cookies': True
 }
 
