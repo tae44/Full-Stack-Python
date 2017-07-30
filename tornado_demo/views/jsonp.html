@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../statics/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+    <input type="button" value="Ajax" onclick="DoAjax()">
+    <input type="button" value="JsonpAjax" onclick="JsonAjax()">
+    <script>
+        function func(arg) {
+            console.log(arg);
+        }
+        function DoAjax() {
+            $.ajax({
+                url: 'http://jason.com:8002/jsonp',
+                type: 'POST',
+                data: {'k1': 'v1'},
+                success: function (arg) {
+                    console.log(arg);
+                }
+            });
+        }
+        function JsonAjax() {
+            $.ajax({
+                url: 'http://jason.com:8002/jsonp',
+                dataType: 'jsonp',
+                jsonpCallBack: 'func'
+            });
+        }
+    </script>
+
+</body>
+</html>
