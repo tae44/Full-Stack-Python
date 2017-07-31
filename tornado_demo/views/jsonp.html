@@ -8,14 +8,16 @@
 <body>
 
     <input type="button" value="Ajax" onclick="DoAjax()">
-    <input type="button" value="JsonpAjax" onclick="JsonAjax()">
+    <input type="button" value="DoJsonpAjax" onclick="DoJsonpAjax()">
+    <input type="button" value="JsonpAjaxTV" onclick="JsonpAjaxTV()">
     <script>
         function func(arg) {
             console.log(arg);
         }
         function DoAjax() {
             $.ajax({
-                url: 'http://jason.com:8002/jsonp',
+//                url: '/jsonp',
+                url: 'http://jeff.com:8002/jsonp',
                 type: 'POST',
                 data: {'k1': 'v1'},
                 success: function (arg) {
@@ -23,11 +25,31 @@
                 }
             });
         }
-        function JsonAjax() {
+        function DoJsonpAjax() {
+//            var tag = document.createElement('script'); 创建标签
+//            tag.src = 'http://jeff.com:8002/jsonp?callback=func';
+//            document.head.appendChild(tag);             将创建的标签添加到head标签中
+//            document.head.removeChild(tag);
             $.ajax({
-                url: 'http://jason.com:8002/jsonp',
+                url: 'http://jeff.com:8002/jsonp',
                 dataType: 'jsonp',
-                jsonpCallBack: 'func'
+                jsonp: 'callback',
+                jsonpCallback: 'func'                     // 发送成功后自动执行函数
+            });
+        }
+        function list(arg) {
+            console.log(arg);
+        }
+        function JsonpAjaxTV() {
+//            var tag = document.createElement('script');
+//            tag.src = 'http://www.jxntv.cn/data/jmd-jxtv2.html?callback=list';
+//            document.head.appendChild(tag);
+//            document.head.removeChild(tag);
+            $.ajax({
+                url: 'http://www.jxntv.cn/data/jmd-jxtv2.html?callback=list',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                jsonpCallback: 'list'
             });
         }
     </script>
