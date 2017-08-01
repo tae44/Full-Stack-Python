@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/home" method="post" enctype="multipart/form-data">
+        <input type="text" name="ip" placeholder="ip">
+        <input type="text" name="host" placeholder="host">
+        <p>
+            <input type="checkbox" name="favor" value="1">篮球
+            <input type="checkbox" name="favor" value="2">足球
+            <input type="checkbox" name="favor" value="3">棒球
+        </p>
+        <p>
+            <input type="file" name="fafafa">
+            <input type="file" name="fafafa">
+        </p>
+        {% if errorInfo %}
+            <span>{{ errorInfo }}</span>
+        {% end %}
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+</html>
